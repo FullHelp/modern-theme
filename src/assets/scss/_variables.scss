@@ -1,0 +1,56 @@
+// Typography
+$font-family-sans-serif: "Roboto", sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+$h1-font-size: $font-size-base * 2 !default;
+$h2-font-size: $font-size-base * 1.7 !default;
+$h3-font-size: $font-size-base * 1.45 !default;
+$h4-font-size: $font-size-base * 1.2 !default;
+$h5-font-size: $font-size-base * 1.15 !default;
+$h6-font-size: $font-size-base !default;
+
+// Spacing
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 980px
+);
+
+// Colors
+
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+$blue: #467fcf;
+$azure: #45aaf2;
+$indigo: #6574cd;
+$purple: #4e148c;
+$pink: #f66d9b;
+$red: #cd201f;
+$orange: #fd9644;
+$yellow: #f1c40f;
+$lime: #7bd235;
+$green: #5eba00;
+$teal: #2bcbba;
+$cyan: #17a2b8;
+
+$primary: $purple;
+$secondary: $gray-600;
+$success: $green;
+$info: $azure;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+
+$breadcrumb-bg: $gray-100;

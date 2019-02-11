@@ -1,0 +1,13 @@
+{
+    "help_center": "Help Center",
+    "how_can_we_help": "How can we help?",
+    "search_input_placeholder": "Enter your search here...",
+
+    "home_page_title": "Home",
+
+    "category_empty": "This category has no articles at this moment.",
+    "collection_empty": "This collection has no categories nor articles at this moment.",
+
+    "category_articles_count": "{0} no articles in this category|{1} 1 article in this category|[2,*] :count articles in this category",
+    "collection_articles_count": "{0} no articles in this collection|{1} 1 article in this collection|[2,*] :count articles in this collection"
+}

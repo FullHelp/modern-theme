@@ -1,0 +1,82 @@
+{% extends 'site::base' %}
+
+{% block title %}{{ collection.name }}{% endblock %}
+
+{% block content %}
+<section class="jumbotron bg-primary small">
+    <div class="container">
+        <form action="#" class="search-form">
+            <input type="text" name="query" id="query" class="form-control" placeholder="{{ __('search_input_placeholder') }}">
+        </form>
+    </div>
+</section>
+
+<nav aria-label="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url() }}">{{ site.name }}</a></li>
+            <li class="breadcrumb-item active">{{ collection.name }}</li>
+        </ol>
+    </div>
+</nav>
+
+<section class="education">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="about-collection mb-4">
+                    <h3>{{ collection.name }}</h3>
+                    <p>{{ collection.summary }}</p>
+                </div>
+
+                {% if articles.where('categories_count', 0).count() %}
+                    <div class="list-group">
+                        {% for article in articles.where('categories_count', 0) %}
+                            <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4><i class="fe fe-bookmark text-primary"></i> {{ article.title }}</h4>
+                                </div>
+                                <p class="mb-1">{{ article.summary }}</p>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% set headingDisplayed = false %}
+
+                {% if collection.categories.count() > 0 %}
+                    {% for category in collection.categories %}
+                        {% for article in articles %}
+                            {% if article.categories.contains('id', category.id) %}
+
+                                {% if headingDisplayed == false %}
+                                    {% set headingDisplayed = true %}
+                                    <div class="mt-4">
+                                        <h5>{{ category.name }}</h5>
+                                        <p class="text-muted">{{ category.summary }}</p>
+                                        <div class="list-group">
+                                {% endif %}
+
+                                <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h4><i class="fe fe-bookmark text-primary"></i> {{ article.title }}</h4>
+                                    </div>
+                                    <p class="mb-1">{{ article.summary }}</p>
+                                </a>
+
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+
+                {% if headingDisplayed %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {{ articles.links() | raw }}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,9 @@
+.section {
+    padding: 5rem 3rem;
+
+    &.contact {
+        .lead {
+            color: $text-muted;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.education {    
+    &.overheader {
+        margin-top: -35px;
+
+        &::before {
+            display: block;
+            content: "";
+            background-color: #4e148c;
+            height: 80px;
+        }
+
+        .card {
+            margin: -80px auto 0;
+            box-shadow: $box-shadow;
+        }
+    }
+
+    .card {
+        border: 0;
+        overflow: hidden;
+        background-color: $gray-100;
+
+        .list-group .list-group-item {
+            padding: 25px;
+
+            h2, h3, h4, h5 {
+                margin-bottom: 1rem;
+            }
+
+            p {
+                color: $gray-700;
+            }
+
+            small {
+                color: $gray-600;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: $white;
+                color: $gray-900;
+
+                p {
+                    color: $gray-900;
+                }
+            }
+        }
+    }
+}

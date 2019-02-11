@@ -1,0 +1,48 @@
+.jumbotron {
+    text-align: center;
+    color: $white;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 1rem;
+
+    h1 {
+        font-weight: bold;
+    }
+
+    .search-form {
+        margin: 35px auto 0;
+
+        .form-control {
+            height: 60px;
+            font-size: 1.1rem;
+            padding: .8rem 1rem;
+            background-color: transparentize($white, .9);
+            border: 0;
+            transition: color .3s ease-out, background-color .3s ease-out, box-shadow .2s ease-out;
+            color: transparentize($white, .5);
+
+            &::placeholder {
+                color: transparentize($white, .5);
+            }
+
+            &:focus {
+                background-color: #fff;
+                color: $input-plaintext-color;
+                box-shadow: $box-shadow-lg;
+
+                &::placeholder {
+                    color: $text-muted;
+                }
+            }
+        }
+    }
+}
+
+.navbar + .jumbotron {
+    margin-top: -56px;
+    padding: 5rem 2rem;
+
+    &.small {
+        padding: 2rem;
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="{{ language.code }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}{% endblock %} - {{ site.name }}</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('styles/iconfont.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
+
+    {% block css %}{% endblock %}
+
+    <!-- Site's HTML HEAD -->
+    {{ site.html_head|raw }}
+
+    {{ content_for_head() }}
+</head>
+<body class="{{ sectionName }}">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url() }}">{{ site.name }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#contactModal" data-toggle="modal" class="nav-link"><i class="fe fe-message-square"></i> Get in touch</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-globe"></i> {{ language.native }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for lang in languages %}
+                            <a class="dropdown-item" href="{{ lang.url }}">{{ lang.native }}</a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <section class="contact section">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-6">
+                    <h2>Want to talk to a human?</h2>
+                    <p class="lead">If you cannot find what you are looking for in our help center, you can always contact us. <br> We will answer to you shoirtly!</p>
+
+                    <a href="#contactModal" data-toggle="modal" class="btn btn-primary">Contact Us</a>
+                </div>
+                <div class="col-6">
+                    <img src="{{ asset('images/undraw_messaging_uok8.svg') }}" width="100%" alt="Woman messaging on mobile phone">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel"><i class="fe fe-message-square"></i> Get in touch</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="name">Name <small>(optional)</small></label>
+                            <input type="text" name="name" id="name" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attachments" class="d-block">File(s) <small>(optional)</small></label>
+                            <input type="file" name="attachments" id="attachments" multiple>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">© My Site 2018. Powered by <a href="#">AllHelp.com</a>.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="{{ asset('scripts/site.js') }}"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>

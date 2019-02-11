@@ -1,0 +1,47 @@
+{% extends "site::base.twig" %}
+
+{% block title %}{{ __('home_page_title') }}{% endblock %}
+
+{% block content %}
+<section class="jumbotron bg-primary">
+    <div class="container">
+        <h1>{{ __('how_can_we_help') }}</h1>
+
+        <form action="#" class="search-form">
+            <input type="text" name="query" id="query" class="form-control" placeholder="{{ __('search_input_placeholder') }}">
+        </form>
+    </div>
+</section>
+
+<section class="education overheader">
+    <div class="container">
+        <div class="card">
+            <div class="list-group">
+                {# List all collections #}
+                {% if collections.count() > 1 %}
+                    {% for collection in collections %}
+                        <a href="{{ url("collection/#{collection.id}/#{collection.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h4><i class="fe fe-bookmark text-primary"></i> {{ collection.name }}</h4>
+                            </div>
+                            <p class="mb-1">{{ collection.summary }}</p>
+                            <small>{{ __n('collection_articles_count', collection.articles_count) }}</small>
+                        </a>
+                    {% endfor %}
+                {# List categories of collection #}
+                {% else %}
+                    {% for category in collections.first().categories %}
+                        <a href="{{ url("category/#{category.id}/#{category.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h4><i class="fe fe-bookmark text-primary"></i> {{ category.name }}</h4>
+                            </div>
+                            <p class="mb-1">{{ category.summary }}</p>
+                            <small>{{ __n('category_articles_count', category.articles_count) }}</small>
+                        </a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

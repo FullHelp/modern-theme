@@ -1,0 +1,51 @@
+{% extends 'site::base' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+<section class="jumbotron bg-primary small">
+    <div class="container">
+        <form action="#" class="search-form">
+            <input type="text" name="query" id="query" class="form-control" placeholder="{{ __('search_input_placeholder') }}">
+        </form>
+    </div>
+</section>
+
+<nav aria-label="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url() }}">{{ site.name }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ url("collection/#{category.collection_id}/#{category.collection.slug}") }}">{{ category.collection.name }}</a></li>
+            <li class="breadcrumb-item active">{{ category.name }}</li>
+        </ol>
+    </div>
+</nav>
+
+<section class="education">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h3>{{ category.name }}</h3>
+                <p>{{ category.summary }}</p>
+
+                {% if articles.count() > 0 %}
+                    <div class="list-group">
+                        {% for article in articles %}
+                            <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4><i class="fe fe-bookmark text-primary"></i> {{ article.title }}</h4>
+                                </div>
+                                <p class="mb-1">{{ article.summary }}</p>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="no-content">{{ __('category_empty') }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        {{ articles.links() | raw }}
+    </div>
+</section>
+{% endblock %}

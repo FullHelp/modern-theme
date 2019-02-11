@@ -1,0 +1,68 @@
+{% extends 'site::base' %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ asset('styles/prism.css') }}">
+{% endblock %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<section class="jumbotron bg-primary small">
+    <div class="container">
+        <form action="#" class="search-form">
+            <input type="text" name="query" id="query" class="form-control" placeholder="{{ __('search_input_placeholder') }}">
+        </form>
+    </div>
+</section>
+
+<nav aria-label="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url() }}">{{ site.name }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ url("collection/#{article.collection_id}/#{article.collection.slug}") }}">{{ article.collection.name }}</a></li>
+            <li class="breadcrumb-item active">{{ article.title }}</li>
+        </ol>
+    </div>
+</nav>
+
+
+<section class="container">
+<div class="card article-single">
+    <div class="card-body">
+        <h1>{{ article.title }}</h1>
+
+        <p class="lead article-summary">{{ article.summary }}</p>
+
+        {{ article.content|raw }}
+    </div>
+    <div class="card-footer">
+        <div class="rate-article">
+            <small class="rating-sent text-success" style="display:none;">Your vote was sent, thanks!</small>
+            <small class="feedback-sent text-success" style="display:none;">Your feedback was received, thanks for your time and comments!</small>
+
+            <form action="#" style="display:none;" onsubmit="helpcenter.sendFeedback({{ article.id }}); return false;">
+                <small class="text-success">Your vote was sent, thanks!</small>
+
+                <div class="form-group">
+                    <label for="feedback">Feedback about this article?</label>
+                    <textarea id="feedback" name="feedback" class="form-control" rows="1"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-sm">Send feedback</button>
+            </form>
+
+            <div class="main" style="display:block;">
+                <span class="title">Was this article helpful?</span>
+
+                <button class="btn btn-sm btn-outline-primary like" onclick="helpcenter.sendLike({{ article.id }})"><span class="fa fa-check"></span> Yes</button>
+                <button class="btn btn-sm btn-outline-primary dislike" onclick="helpcenter.sendDislike({{ article.id }})"><span class="fa fa-times"></span> No</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block js %}
+<script src="{{ asset('scripts/prism.js') }}"></script>
+{% endblock %}
