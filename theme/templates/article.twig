@@ -37,25 +37,25 @@
     </div>
     <div class="card-footer">
         <div class="rate-article">
-            <small class="rating-sent text-success" style="display:none;">Your vote was sent, thanks!</small>
-            <small class="feedback-sent text-success" style="display:none;">Your feedback was received, thanks for your time and comments!</small>
+            <small class="rating-sent text-success" style="display:none;">{{ __('article_vote_sent') }}</small>
+            <small class="feedback-sent text-success" style="display:none;">{{ __('article_feedback_sent') }}</small>
 
             <form action="#" style="display:none;" onsubmit="helpcenter.sendFeedback({{ article.id }}); return false;">
-                <small class="text-success">Your vote was sent, thanks!</small>
+                <small class="text-success">{{ __('article_vote_sent') }}</small>
 
                 <div class="form-group">
-                    <label for="feedback">Feedback about this article?</label>
+                    <label for="feedback">{{ __('article_feedback') }}</label>
                     <textarea id="feedback" name="feedback" class="form-control" rows="1"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-sm">Send feedback</button>
+                <button type="submit" class="btn btn-primary btn-sm">{{ __('send_article_feedback') }}</button>
             </form>
 
             <div class="main" style="display:block;">
-                <span class="title">Was this article helpful?</span>
+                <span class="title">{{ __('rate_article') }}</span>
 
-                <button class="btn btn-sm btn-outline-primary like" onclick="helpcenter.sendLike({{ article.id }})"><span class="fa fa-check"></span> Yes</button>
-                <button class="btn btn-sm btn-outline-primary dislike" onclick="helpcenter.sendDislike({{ article.id }})"><span class="fa fa-times"></span> No</button>
+                <button class="btn btn-sm btn-outline-primary like" onclick="helpcenter.sendLike({{ article.id }})"><span class="fa fa-check"></span> {{ __('article_helpful') }}</button>
+                <button class="btn btn-sm btn-outline-primary dislike" onclick="helpcenter.sendDislike({{ article.id }})"><span class="fa fa-times"></span> {{ __('article_not_helpful') }}</button>
             </div>
         </div>
     </div>

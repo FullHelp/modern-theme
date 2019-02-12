@@ -16,9 +16,6 @@
 
     {% block css %}{% endblock %}
 
-    <!-- Site's HTML HEAD -->
-    {{ site.html_head|raw }}
-
     {{ content_for_head() }}
 </head>
 <body class="{{ sectionName }}">
@@ -32,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#contactModal" data-toggle="modal" class="nav-link"><i class="fe fe-message-square"></i> Get in touch</a>
+                        <a href="#contactModal" data-toggle="modal" class="nav-link"><i class="fe fe-message-square"></i> {{ __('get_in_touch') }}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,28 +48,14 @@
 
     {% block content %}{% endblock %}
 
-    <section class="contact section">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-6">
-                    <h2>Want to talk to a human?</h2>
-                    <p class="lead">If you cannot find what you are looking for in our help center, you can always contact us. <br> We will answer to you shoirtly!</p>
-
-                    <a href="#contactModal" data-toggle="modal" class="btn btn-primary">Contact Us</a>
-                </div>
-                <div class="col-6">
-                    <img src="{{ asset('images/undraw_messaging_uok8.svg') }}" width="100%" alt="Woman messaging on mobile phone">
-                </div>
-            </div>
-        </div>
-    </section>
+    {{ section('getintouch') | raw }}
 
     <!-- Modal -->
     <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel"><i class="fe fe-message-square"></i> Get in touch</h5>
+                    <h5 class="modal-title" id="contactModalLabel"><i class="fe fe-message-square"></i> {{ __('get_in_touch') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -110,7 +93,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="copyright">© My Site 2018. Powered by <a href="#">AllHelp.com</a>.</p>
+            <p class="copyright">© {{ site.name }} {{ year }}. {{ __('powered_by') | raw }}</p>
         </div>
     </footer>
 

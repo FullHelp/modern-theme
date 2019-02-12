@@ -1,3 +1,28 @@
 {
-    "Help Center": "Centro de Ayuda"
+    "powered_by": "Provisto por <a href=\"https://www.fullhelp.com\" target=\"_blank\">FullHelp.com</a>.",
+
+    "help_center": "Centro de Ayuda",
+    "how_can_we_help": "¿Cómo podemos ayudarte?",
+    "search_input_placeholder": "Ingresa tu búsqueda aquí...",
+
+    "home_page_title": "Inicio",
+
+    "contact_us": "Contáctenos",
+    "get_in_touch": "Escríbenos",
+    "contact_heading": "¿Quieres hablar con alguien?",
+    "contact_paragraph": "Siempre puedes ponerte en contacto si no encuentras lo que estás buscando en nuestro centro de ayuda. <br><br> ¡Te responderemos tan pronto sea posible!",
+    
+    "category_empty": "Esta categoría no tiene artículos en este momento.",
+    "collection_empty": "Esta colección no tiene artículos en este momento.",
+
+    "category_articles_count": "{0} no hay artículos en esta categoría|{1} 1 artículo en esta categoría|[2,*] :count artículos en esta categoría",
+    "collection_articles_count": "{0} no hay artículos en esta colección|{1} 1 artículo en esta colección|[2,*] :count artículos en esta collección",
+
+    "article_vote_sent": "¡Gracias por tu voto!",
+    "article_feedback_sent": "Hemos recibido tu comentario, ¡gracias por tu tiempo y ayudarnos mejorar el artículo!",
+    "article_feedback": "¿Qué podemos mejorar en este artículo?",
+    "send_article_feedback": "Enviar comentario",
+    "rate_article": "¿Este artículo fue de de utilidad?",
+    "article_helpful": "Sí",
+    "article_not_helpful": "No"
 }

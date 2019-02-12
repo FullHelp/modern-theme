@@ -1,13 +1,28 @@
 {
+    "powered_by": "Powered by <a href=\"https://www.fullhelp.com\" target=\"_blank\">FullHelp.com</a>.",
+
     "help_center": "Help Center",
     "how_can_we_help": "How can we help?",
     "search_input_placeholder": "Enter your search here...",
 
     "home_page_title": "Home",
 
+    "contact_us": "Contact us",
+    "get_in_touch": "Get in touch",
+    "contact_heading": "Want to talk to a human?",
+    "contact_paragraph": "If you cannot find what you are looking for in our help center, you can always contact us. <br> We will answer to you shoirtly!",
+
     "category_empty": "This category has no articles at this moment.",
     "collection_empty": "This collection has no categories nor articles at this moment.",
 
     "category_articles_count": "{0} no articles in this category|{1} 1 article in this category|[2,*] :count articles in this category",
-    "collection_articles_count": "{0} no articles in this collection|{1} 1 article in this collection|[2,*] :count articles in this collection"
+    "collection_articles_count": "{0} no articles in this collection|{1} 1 article in this collection|[2,*] :count articles in this collection",
+
+    "article_vote_sent": "Your vote was sent, thanks!",
+    "article_feedback_sent": "Your feedback was received, thanks for your time and comments!",
+    "article_feedback": "Help us make this article better. What's wrong with this article?",
+    "send_article_feedback": "Send feedback",
+    "rate_article": "Was this article helpful?",
+    "article_helpful": "Yes",
+    "article_not_helpful": "No"
 }
