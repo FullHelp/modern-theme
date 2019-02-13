@@ -7,6 +7,16 @@
 
     "home_page_title": "Inicio",
 
+    "field_optional": "(opcional)",
+    "first_name": "Nombre",
+    "last_name": "Apellidos",
+    "email": "E-mail",
+    "message": "Mensaje",
+    "subject": "Asunto",
+    "files": "Archivo(s)",
+    "submit_contact_form": "Enviar mensaje",
+
+    "contact_message_sent": "Hemos recibido tu mensaje, ¡te responderemos tan pronto sea posible!",
     "contact_us": "Contáctenos",
     "get_in_touch": "Escríbenos",
     "contact_heading": "¿Quieres hablar con alguien?",
@@ -24,5 +34,23 @@
     "send_article_feedback": "Enviar comentario",
     "rate_article": "¿Este artículo fue de de utilidad?",
     "article_helpful": "Sí",
-    "article_not_helpful": "No"
+    "article_not_helpful": "No",
+
+    "validation": {
+        "required": "Este campo es requerido",
+        "string": "Este campo debe contener texto solamente",
+        "email": "Por favor provea una dirección de e-mail válida",
+        "array": "Este campo debe contener un array solamente",
+        "file": "Sólo archivos son permitidos",
+        "mimes": "Sólo los siguentes tipos de archivos son permitidos: :values",
+        "max": {
+            "numeric": "No debe ser más de :max",
+            "file": "No debe ser más de :max kilobytes",
+            "array": "No puede tener más de :max valores",
+            "string": "No debe ser más de :max characters"
+        },
+        "min": {
+            "string": "Debe tener al menos :min caracteres"
+        }
+    }
 }

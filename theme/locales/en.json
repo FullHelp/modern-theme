@@ -7,6 +7,16 @@
 
     "home_page_title": "Home",
 
+    "field_optional": "(optional)",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "email": "Email",
+    "message": "Message",
+    "subject": "Subject",
+    "files": "File(s)",
+    "submit_contact_form": "Send message",
+
+    "contact_message_sent": "We received your message, we will reply you as soon as possible!",
     "contact_us": "Contact us",
     "get_in_touch": "Get in touch",
     "contact_heading": "Want to talk to a human?",
@@ -24,5 +34,23 @@
     "send_article_feedback": "Send feedback",
     "rate_article": "Was this article helpful?",
     "article_helpful": "Yes",
-    "article_not_helpful": "No"
+    "article_not_helpful": "No",
+
+    "validation": {
+        "required": "This field is required",
+        "string": "Field must be a string",
+        "email": "Must be a valid email address",
+        "array": "Must be an array",
+        "file": "Only files are allowed",
+        "mimes": "Only the following types can be attached: :values",
+        "max": {
+            "numeric": "May not be greater than :max",
+            "file": "May not be greater than :max kilobytes",
+            "array": "May not have more than :max items",
+            "string": "May not be greater than :max characters"
+        },
+        "min": {
+            "string": "Must be at least :min characters"
+        }
+    }
 }
