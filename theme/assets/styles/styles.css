@@ -7874,3 +7874,14 @@ blockquote {
 
 .rate-article.loading {
   opacity: .5; }
+
+.site-search .jumbotron {
+  margin-bottom: 0; }
+
+.site-search .education {
+  padding-top: 2rem; }
+
+#searchhighlight em {
+  display: inline-block;
+  background: rgba(243, 217, 84, 0.43);
+  font-style: normal; }

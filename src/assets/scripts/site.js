@@ -93,10 +93,33 @@
         $('.btn').prop('disabled', false);
     }
 
+    /**
+     * Highlight search terms.
+     */
+    function highlight () {
+        var text = document.getElementById("query").value;
+
+        if (text.trim() !== '') {
+            var query = new RegExp("(\\b" + text + "\\b)", "gim");
+            var e = document.getElementById("searchhighlight").innerHTML;
+            var enew = e.replace(/(<em>|<\/em>)/igm, "");
+
+            document.getElementById("searchhighlight").innerHTML = enew;
+            
+            var newe = enew.replace(query, "<em>$1</em>");
+
+            document.getElementById("searchhighlight").innerHTML = newe;
+        }
+    }
+
     hc.showLikeDisklikeButtons = showLikeDisklikeButtons;
     hc.showArticleFeedbackForm = showArticleFeedbackForm;
     hc.sendLike = sendLike;
     hc.sendDislike = sendDislike;
     hc.sendFeedback = sendFeedback;
+
+    hc.search = {
+        highlight
+    }
 
 })(window.helpcenter = (window.helpcenter || {}))

@@ -1,0 +1,45 @@
+{% extends "site::base.twig" %}
+
+{% block title %}{{ __('search_page_title') }}{% endblock %}
+
+{% block content %}
+    <section class="jumbotron bg-primary small">
+        <div class="container">
+            <form action="{{ url('search') }}" class="search-form">
+                <input type="text" name="query" value="{{ query }}" id="query" class="form-control" placeholder="{{ __('search_input_placeholder') }}">
+            </form>
+        </div>
+    </section>
+
+    <section class="education">
+        <div class="container">
+            
+            {% if query %}
+                <h1>{{ __n('search_results_title_for_query', articles.total(), { query: query|escape }) | raw }}</h1>
+            {% else %}
+                <h1>{{ __n('search_results_title', articles.total()) }}</h1>
+            {% endif %}
+            
+            <div class="card" id="searchhighlight">
+                <div class="list-group">
+                    {% for article in articles %}
+                        <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h4><i class="fe fe-bookmark text-primary"></i> {{ article.title }}</h4>
+                            </div>
+                            <p class="mb-1">{{ article.summary }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {{ articles.links() | raw }}
+        </div>
+    </section>
+{% endblock %}
+
+{% block js %}
+<script>
+    helpcenter.search.highlight()
+</script>
+{% endblock %}

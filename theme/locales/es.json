@@ -6,6 +6,10 @@
     "search_input_placeholder": "Ingresa tu búsqueda aquí...",
 
     "home_page_title": "Inicio",
+    "search_page_title": "Buscar",
+
+    "search_results_title_for_query": "{0} No hay resultados para &ldquo;<span class=\"text-primary\">:query</span>&rdquo;|{1} Encontramos 1 resultado para &ldquo;<span class=\"text-primary\">:query</span>&rdquo;|[2,*] Encontramos :count resultados para &ldquo;<span class=\"text-primary\">:query</span>&rdquo;",
+    "search_results_title": "{0} Sin resultados|{1} Encontramos 1 resultado|[2,*] Encontramos :count resultados",
 
     "field_optional": "(opcional)",
     "first_name": "Nombre",
