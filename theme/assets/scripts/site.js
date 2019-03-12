@@ -97,18 +97,14 @@
      * Highlight search terms.
      */
     function highlight () {
-        var text = document.getElementById("query").value;
-
-        if (text.trim() !== '') {
-            var query = new RegExp("(\\b" + text + "\\b)", "gim");
-            var e = document.getElementById("searchhighlight").innerHTML;
-            var enew = e.replace(/(<em>|<\/em>)/igm, "");
-
-            document.getElementById("searchhighlight").innerHTML = enew;
-            
-            var newe = enew.replace(query, "<em>$1</em>");
-
-            document.getElementById("searchhighlight").innerHTML = newe;
+        if (window.Mark) {
+            new Mark(document.querySelector(".highlight-context")).mark(
+                document.getElementById('query').value,  {
+                    separateWordSearch: false
+                }
+            );
+        } else {
+            console.error('Please include the mark.js library before site.js')
         }
     }
 

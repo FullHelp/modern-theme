@@ -20,7 +20,7 @@
                 <h1>{{ __n('search_results_title', articles.total()) }}</h1>
             {% endif %}
             
-            <div class="card" id="searchhighlight">
+            <div class="card highlight-context">
                 <div class="list-group">
                     {% for article in articles %}
                         <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -39,6 +39,7 @@
 {% endblock %}
 
 {% block js %}
+<script src="{{ asset('scripts/mark.js') }}"></script>
 <script>
     helpcenter.search.highlight()
 </script>

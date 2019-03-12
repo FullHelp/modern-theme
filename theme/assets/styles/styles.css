@@ -7881,7 +7881,7 @@ blockquote {
 .site-search .education {
   padding-top: 2rem; }
 
-#searchhighlight em {
+.highlight-context em {
   display: inline-block;
   background: rgba(243, 217, 84, 0.43);
   font-style: normal; }
