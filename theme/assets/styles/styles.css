@@ -7830,7 +7830,8 @@ blockquote {
 .callout {
   padding: 1rem;
   margin-bottom: 1rem;
-  border-left: 5px solid transparent; }
+  border-left: 5px solid transparent;
+  border-radius: 0.25rem; }
   .callout p:last-of-type {
     margin: 0; }
   .callout .callout-title {
