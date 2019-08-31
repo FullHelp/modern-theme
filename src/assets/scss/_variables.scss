@@ -4,6 +4,7 @@ $spacer: 1rem;
 // Typography
 $font-family-sans-serif: "Roboto", sans-serif;
 $font-size-base: 1rem;
+$font-size-sm: ($font-size-base * .875);
 $line-height-base: 1.6;
 
 $h1-font-size: $font-size-base * 2 !default;
