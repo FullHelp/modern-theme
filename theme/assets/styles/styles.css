@@ -7885,3 +7885,9 @@ blockquote {
   display: inline-block;
   background: rgba(243, 217, 84, 0.43);
   font-style: normal; }
+
+a:not(.nav-link):not(.navbar-brand):not(.list-group-item-action):not(.btn):not(.dropdown-item) {
+  padding-bottom: 2px; }
+  a:not(.nav-link):not(.navbar-brand):not(.list-group-item-action):not(.btn):not(.dropdown-item):hover {
+    text-decoration: none;
+    border-bottom: 1px solid; }
