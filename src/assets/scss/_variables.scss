@@ -1,3 +1,6 @@
+// Spacers
+$spacer: 1rem;
+
 // Typography
 $font-family-sans-serif: "Roboto", sans-serif;
 $font-size-base: 1rem;
@@ -54,3 +57,7 @@ $light: $gray-100;
 $dark: $gray-800;
 
 $breadcrumb-bg: $gray-100;
+
+$body-color: $gray-700;
+
+$headings-margin-bottom: $spacer;
