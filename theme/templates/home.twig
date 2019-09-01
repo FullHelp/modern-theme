@@ -21,9 +21,11 @@
                     {% for collection in collections %}
                         <a href="{{ url("collection/#{collection.id}/#{collection.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
                             <div class="d-flex w-100 justify-content-between">
-                                <h4><i class="fe fe-bookmark text-primary"></i> {{ collection.name }}</h4>
+                                <h4 {% if collection.summary == false %} class="mb-0" {% endif %}>{{ collection.name }}</h4>
                             </div>
-                            <p class="mb-1">{{ collection.summary }}</p>
+                            {% if collection.summary %}
+                                <p class="mb-1">{{ collection.summary }}</p>
+                            {% endif %}
                             <small>{{ __n('collection_articles_count', collection.articles_count) }}</small>
                         </a>
                     {% endfor %}

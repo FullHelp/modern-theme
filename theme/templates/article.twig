@@ -31,7 +31,9 @@
     <div class="card-body">
         <h1>{{ article.title }}</h1>
 
-        <p class="lead article-summary">{{ article.summary }}</p>
+        {% if article.summary %}
+            <p class="lead article-summary">{{ article.summary }}</p>
+        {% endif %}
 
         {{ article.content|raw }}
     </div>

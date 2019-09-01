@@ -68,7 +68,7 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 0.5rem; }
 
 p {
   margin-top: 0;
@@ -289,7 +289,7 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 500;
   line-height: 1.2;
@@ -6971,8 +6971,6 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #f8f9fa; }
   .education .card .list-group .list-group-item {
     padding: 25px; }
-    .education .card .list-group .list-group-item h2, .education .card .list-group .list-group-item h3, .education .card .list-group .list-group-item h4, .education .card .list-group .list-group-item h5 {
-      margin-bottom: 1rem; }
     .education .card .list-group .list-group-item p {
       color: #495057; }
     .education .card .list-group .list-group-item small {
@@ -7890,17 +7888,14 @@ blockquote {
 mark {
   background-color: transparent;
   font-weight: bold;
-  color: #343a40; }
+  color: #343a40;
+  padding: 0; }
 
 a:not(.nav-link):not(.navbar-brand):not(.list-group-item-action):not(.btn):not(.dropdown-item) {
   padding-bottom: 2px; }
   a:not(.nav-link):not(.navbar-brand):not(.list-group-item-action):not(.btn):not(.dropdown-item):hover {
     text-decoration: none;
     border-bottom: 1px solid; }
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: normal; }
 
 pre {
   border-radius: 0.25rem;

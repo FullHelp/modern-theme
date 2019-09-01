@@ -26,7 +26,10 @@
             <div class="card-body">
                 <div class="about-collection mb-4">
                     <h3>{{ collection.name }}</h3>
-                    <p>{{ collection.summary }}</p>
+
+                    {% if collection.summary %}
+                        <p>{{ collection.summary }}</p>
+                    {% endif %}
                 </div>
 
                 {% if articles.where('categories_count', 0).count() %}
@@ -34,7 +37,7 @@
                         {% for article in articles.where('categories_count', 0) %}
                             <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4><i class="fe fe-bookmark text-primary"></i> {{ article.title }}</h4>
+                                    <h4>{{ article.title }}</h4>
                                 </div>
                                 <p class="mb-1">{{ article.summary }}</p>
                             </a>
@@ -59,9 +62,11 @@
 
                                 <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h4><i class="fe fe-bookmark text-primary"></i> {{ article.title }}</h4>
+                                        <h4 {% if article.summary == false %} class="mb-0" {% endif %}>{{ article.title }}</h4>
                                     </div>
-                                    <p class="mb-1">{{ article.summary }}</p>
+                                    {% if article.summary %}
+                                        <p class="mb-0">{{ article.summary }}</p>
+                                    {% endif %}
                                 </a>
 
                             {% endif %}
