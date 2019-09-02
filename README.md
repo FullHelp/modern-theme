@@ -1,8 +1,10 @@
 # Read me
 
-This theme is included and enabled by default on [Full Help's help desk and knowledgebase software](https://www.fullhelp.com/en?ref=modern-theme&source=github). 
+This theme is included and enabled by default on [Full Help's help desk and knowledgebase software](https://www.fullhelp.com/en?ref=modern-theme&source=github).
 
-Features
+[See a live example](https://docs.fullhelp.com/en?ref=modern-theme&source=github)
+
+## Features
 
 - Multi-language support
 - Article feedbacks
@@ -12,4 +14,3 @@ Features
 - Callouts: info, warning, danger, success
 - Fully responsive
 - Customizable
-
