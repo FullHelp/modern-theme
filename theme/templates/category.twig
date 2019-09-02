@@ -14,7 +14,7 @@
 <nav aria-label="breadcrumb">
     <div class="container">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ url() }}">{{ site.name }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ url() }}">{{ __('collections') }}</a></li>
             <li class="breadcrumb-item"><a href="{{ url("collection/#{category.collection_id}/#{category.collection.slug}") }}">{{ category.collection.name }}</a></li>
             <li class="breadcrumb-item active">{{ category.name }}</li>
         </ol>
