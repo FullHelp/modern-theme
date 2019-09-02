@@ -7801,6 +7801,11 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 3rem 4rem; }
   .article-single .card-body .article-summary {
     color: #868e96; }
+  .article-single .card-body p:last-of-type,
+  .article-single .card-body pre:last-of-type,
+  .article-single .card-body ul:last-of-type,
+  .article-single .card-body ol:last-of-type {
+    margin-bottom: 0 !important; }
 
 @media (max-width: 768px) {
   .article-single {

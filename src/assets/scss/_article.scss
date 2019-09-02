@@ -5,6 +5,13 @@
         .article-summary {
             color: $text-muted;
         }
+
+        p:last-of-type,
+        pre:last-of-type,
+        ul:last-of-type,
+        ol:last-of-type {
+            margin-bottom: 0 !important;
+        }
     }
 }
 
