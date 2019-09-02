@@ -2,7 +2,7 @@
     {% for article in articles %}
         <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-                <h4 {% if article.summary == false %} class="mb-0" {% endif %}>{{ article.title }}</h4>
+                <h3 class="h6 {% if article.summary == false %}mb-0{% endif %}">{{ article.title }}</h3>
             </div>
             {% if article.summary %}
                 <p class="mb-0">{{ article.summary }}</p>
