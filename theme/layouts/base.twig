@@ -42,16 +42,18 @@
                     <li class="nav-item">
                         <a href="{{ url('contact') }}" class="nav-link"><i class="fe fe-message-square"></i> {{ __('get_in_touch') }}</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fe fe-globe"></i> {{ language.native }}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for lang in languages %}
-                            <a class="dropdown-item" href="{{ lang.url }}">{{ lang.native }}</a>
-                            {% endfor %}
-                        </div>
-                    </li>
+                    {% if languages|length > 1 %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fe fe-globe"></i> {{ language.native }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {% for lang in languages %}
+                                <a class="dropdown-item" href="{{ lang.url }}">{{ lang.native }}</a>
+                                {% endfor %}
+                            </div>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
