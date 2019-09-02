@@ -6986,6 +6986,10 @@ a.text-dark:hover, a.text-dark:focus {
   .section.contact .lead {
     color: #868e96; }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 0; } }
+
 @font-face {
   font-family: "feather";
   src: url("../fonts/feather-webfont.eot?t=1501841394106");

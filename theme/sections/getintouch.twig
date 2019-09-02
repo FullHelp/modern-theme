@@ -1,13 +1,14 @@
 <section class="contact section">
     <div class="container">
         <div class="row d-flex align-items-center">
-            <div class="col-6">
+            <div class="col-md-6">
                 <h2>{{ __('contact_heading') }}</h2>
-                <p class="lead">{{ __('contact_paragraph') | raw }}</p>
+                <p class="lead d-none d-md-block">{{ __('contact_paragraph') | raw }}</p>
+                <p class="d-md-none ">{{ __('contact_paragraph') | raw }}</p>
 
                 <a href="{{ url('contact') }}" class="btn btn-primary">{{ __('contact_us') }}</a>
             </div>
-            <div class="col-6">
+            <div class="col-md-6 d-none d-md-block">
                 <img src="{{ asset('images/undraw_messaging_uok8.svg') }}" width="100%" alt="Woman messaging on mobile phone">
             </div>
         </div>
