@@ -13,29 +13,17 @@
 
     <section class="education">
         <div class="container">
-            
-            {% if query %}
-                <h1>{{ __n('search_results_title_for_query', articles.total(), { query: query|escape }) | raw }}</h1>
-            {% else %}
-                <h1>{{ __n('search_results_title', articles.total()) }}</h1>
-            {% endif %}
-            
             <div class="card highlight-context">
-                <div class="list-group">
-                    {% for article in articles %}
-                        <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h4 {% if article.summary == false %} class="mb-0" {% endif %}>{{ article.title }}</h4>
-                            </div>
-                            {% if article.summary %}
-                                <p class="mb-0">{{ article.summary }}</p>
-                            {% endif %}
-                        </a>
-                    {% endfor %}
+                <div class="card-body">
+                    {% if query %}
+                        <h2>{{ __n('search_results_title_for_query', articles.total(), { query: query|escape }) | raw }}</h2>
+                    {% else %}
+                        <h2>{{ __n('search_results_title', articles.total()) }}</h2>
+                    {% endif %}
+
+                    {{ section('articles', { articles: articles }) | raw }}
                 </div>
             </div>
-
-            {{ articles.links() | raw }}
         </div>
     </section>
 {% endblock %}

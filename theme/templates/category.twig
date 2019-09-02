@@ -25,27 +25,43 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h3>{{ category.name }}</h3>
-                {% if category.summary %}
-                    <p>{{ category.summary }}</p>
-                {% endif %}
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="about-category">
+                            <h2>{{ category.name }}</h2>
 
-                {% if articles.count() > 0 %}
-                    <div class="list-group">
-                        {% for article in articles %}
-                            <a href="{{ url("article/#{article.id}/#{article.slug}") }}" class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h4 {% if article.summary == false %} class="mb-0" {% endif %}>{{ article.title }}</h4>
-                                </div>
-                                {% if article.summary %}
-                                    <p class="mb-0">{{ article.summary }}</p>
-                                {% endif %}
-                            </a>
-                        {% endfor %}
+                            {% if category.summary %}
+                                <p>{{ category.summary }}</p>
+                            {% endif %}
+                        </div>
                     </div>
-                {% else %}
-                    <p class="no-content">{{ __('category_empty') }}</p>
-                {% endif %}
+                </div>
+
+                <div class="row d-flex align-items-stretch">
+                    <div class="col-md-3 order-md-2">
+                        <dl>
+                            {% for cat in categories %}
+                                {% if category.id == cat.id %}
+                                    <dt>{{ cat.name }}</dt>
+                                {% else %}
+                                    <dt><a href="{{ url("category/#{cat.id}/#{cat.slug}") }}">{{ cat.name }}</a></dt>
+                                {% endif %}
+                                <dd class="small text-muted">{{ cat.summary }}</dd>
+                            {% endfor %}
+                        </dl> 
+                    </div>
+                    <div class="col-md-9 order-md-1">
+                        {% if articles.count %}
+                            {{ section('articles', { articles: articles }) | raw }}
+                        {% else %}
+                            <div class="list-group shadow-sm h-100">
+                                <div class="list-group-item h-100 d-flex align-items-center justify-content-center">
+                                    <p class="no-content text-muted small">{{ __('category_empty') }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
 
