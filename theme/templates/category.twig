@@ -48,7 +48,7 @@
                                 {% endif %}
                                 <dd class="small text-muted">{{ cat.summary }}</dd>
                             {% endfor %}
-                        </dl> 
+                        </dl>
                     </div>
                     <div class="col-md-9 order-md-1">
                         {% if articles.count %}
@@ -64,8 +64,6 @@
                 </div>
             </div>
         </div>
-
-        {{ articles.links() | raw }}
     </div>
 </section>
 {% endblock %}
