@@ -7901,6 +7901,7 @@ blockquote {
 
 .pagination {
   margin-top: 1rem;
+  margin-bottom: 0;
   text-align: center; }
 
 .rate-article.loading {
