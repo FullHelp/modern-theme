@@ -6950,9 +6950,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar + .jumbotron {
   margin-top: -56px;
-  padding: 5rem 2rem; }
+  padding: 5rem 0; }
   .navbar + .jumbotron.small {
-    padding: 2rem; }
+    padding: 2rem 0; }
 
 .education.overheader {
   margin-top: -35px; }
@@ -7797,6 +7797,12 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 3rem 4rem; }
   .article-single .card-body .article-summary {
     color: #868e96; }
+
+@media (max-width: 768px) {
+  .article-single {
+    border: 0; }
+    .article-single .card-body {
+      padding: 0; } }
 
 .form-group label small {
   color: #868e96; }

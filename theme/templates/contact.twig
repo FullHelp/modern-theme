@@ -7,96 +7,94 @@
 {% block content %}
 <section class="jumbotron bg-primary">
     <div class="container">
-        <h1>{{ __('contact_us') }}</h1>
+        <h1 class="mb-0">{{ __('contact_us') }}</h1>
     </div>
 </section>
 
 <section class="container">
-    <div class="col-md-8 mx-auto">
-        <div class="p-5">
-            <form action="{{ url('contact') }}" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <div class="col-md-8 mx-auto py-5">
+        <form action="{{ url('contact') }}" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <div class="form-row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="first_name">{{ __('first_name') }} <small class="text-muted">{{ __('field_optional') }}</small></label>
-                            <input type="text" name="first_name" id="first_name" class="form-control{{ errors.has('first_name') ? ' is-invalid' : '' }}" value="{{ old('first_name') }}">
-                            
-                            {% if errors.has('first_name') %}
-                                <div class="invalid-feedback">
-                                    {{ errors.first('first_name') }}
-                                </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="last_name">{{ __('last_name') }} <small class="text-muted">{{ __('field_optional') }}</small></label>
-                            <input type="text" name="last_name" id="last_name" class="form-control{{ errors.has('last_name') ? ' is-invalid' : '' }}" value="{{ old('last_name') }}">
-
-                            {% if errors.has('last_name') %}
-                                <div class="invalid-feedback">
-                                    {{ errors.first('last_name') }}
-                                </div>
-                            {% endif %}
-                        </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="first_name">{{ __('first_name') }} <small class="text-muted">{{ __('field_optional') }}</small></label>
+                        <input type="text" name="first_name" id="first_name" class="form-control{{ errors.has('first_name') ? ' is-invalid' : '' }}" value="{{ old('first_name') }}">
+                        
+                        {% if errors.has('first_name') %}
+                            <div class="invalid-feedback">
+                                {{ errors.first('first_name') }}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="last_name">{{ __('last_name') }} <small class="text-muted">{{ __('field_optional') }}</small></label>
+                        <input type="text" name="last_name" id="last_name" class="form-control{{ errors.has('last_name') ? ' is-invalid' : '' }}" value="{{ old('last_name') }}">
 
-                <div class="form-group">
-                    <label for="subject">{{ __('subject') }}</label>
-                    <input type="string" name="subject" id="subject" class="form-control{{ errors.has('subject') ? ' is-invalid' : '' }}" value="{{ old('subject') }}">
-
-                    {% if errors.has('subject') %}
-                        <div class="invalid-feedback">
-                            {{ errors.first('subject') }}
-                        </div>
-                    {% endif %}
+                        {% if errors.has('last_name') %}
+                            <div class="invalid-feedback">
+                                {{ errors.first('last_name') }}
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="email">{{ __('email') }}</label>
-                    <input type="email" name="email" id="email" class="form-control{{ errors.has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}">
+            <div class="form-group">
+                <label for="subject">{{ __('subject') }}</label>
+                <input type="string" name="subject" id="subject" class="form-control{{ errors.has('subject') ? ' is-invalid' : '' }}" value="{{ old('subject') }}">
 
-                    {% if errors.has('email') %}
-                        <div class="invalid-feedback">
-                            {{ errors.first('email') }}
-                        </div>
-                    {% endif %}
-                </div>
+                {% if errors.has('subject') %}
+                    <div class="invalid-feedback">
+                        {{ errors.first('subject') }}
+                    </div>
+                {% endif %}
+            </div>
 
-                <div class="form-group">
-                    <label for="message">{{ __('message') }}</label>
-                    <textarea name="message" id="message" class="form-control{{ errors.has('message') ? ' is-invalid' : '' }}">{{ old('message') }}</textarea>
+            <div class="form-group">
+                <label for="email">{{ __('email') }}</label>
+                <input type="email" name="email" id="email" class="form-control{{ errors.has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}">
 
-                    {% if errors.has('message') %}
-                        <div class="invalid-feedback">
-                            {{ errors.first('message') }}
-                        </div>
-                    {% endif %}
-                </div>
+                {% if errors.has('email') %}
+                    <div class="invalid-feedback">
+                        {{ errors.first('email') }}
+                    </div>
+                {% endif %}
+            </div>
 
-                <div class="form-group">
-                    <label for="attachments" class="d-block">{{ __('files') }} <small>{{ __('field_optional') }}</small></label>
-                    <input type="file" name="attachments[]" id="attachments" multiple>
+            <div class="form-group">
+                <label for="message">{{ __('message') }}</label>
+                <textarea name="message" id="message" class="form-control{{ errors.has('message') ? ' is-invalid' : '' }}">{{ old('message') }}</textarea>
 
-                    {% if errors.has('attachments') %}
-                        <div class="invalid-feedback">
-                            {{ errors.first('attachments') }}
-                        </div>
-                    {% endif %}
+                {% if errors.has('message') %}
+                    <div class="invalid-feedback">
+                        {{ errors.first('message') }}
+                    </div>
+                {% endif %}
+            </div>
 
-                    {% if errors.has("attachments.*") %}
-                        <div class="text-danger">
-                            <small>{{ errors.first("attachments.*") }}</small>
-                        </div>
-                    {% endif %}
-                </div>
-                
-                <button type="submit" class="btn btn-primary">{{ __('submit_contact_form') }}</button>
-            </form>
-        </div>
+            <div class="form-group">
+                <label for="attachments" class="d-block">{{ __('files') }} <small>{{ __('field_optional') }}</small></label>
+                <input type="file" name="attachments[]" id="attachments" multiple>
+
+                {% if errors.has('attachments') %}
+                    <div class="invalid-feedback">
+                        {{ errors.first('attachments') }}
+                    </div>
+                {% endif %}
+
+                {% if errors.has("attachments.*") %}
+                    <div class="text-danger">
+                        <small>{{ errors.first("attachments.*") }}</small>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <button type="submit" class="btn btn-primary">{{ __('submit_contact_form') }}</button>
+        </form>
     </div>
 </section>
 {% endblock %}

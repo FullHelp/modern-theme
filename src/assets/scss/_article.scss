@@ -7,3 +7,13 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .article-single {
+        border: 0;
+
+        .card-body {
+            padding: 0;
+        }
+    }
+}
