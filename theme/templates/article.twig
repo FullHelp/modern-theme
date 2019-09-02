@@ -37,28 +37,27 @@
 
         {{ article.content|raw }}
     </div>
-    <div class="card-footer">
-        <div class="rate-article">
-            <small class="rating-sent text-success" style="display:none;">{{ __('article_vote_sent') }}</small>
-            <small class="feedback-sent text-success" style="display:none;">{{ __('article_feedback_sent') }}</small>
 
-            <form action="#" style="display:none;" onsubmit="helpcenter.sendFeedback({{ article.id }}); return false;">
-                <small class="text-success">{{ __('article_vote_sent') }}</small>
+    <div class="rate-article">
+        <span class="rating-sent text-success" style="display:none;">{{ __('article_vote_sent') }}</span>
+        <span class="feedback-sent text-success" style="display:none;">{{ __('article_feedback_sent') }}</span>
 
-                <div class="form-group">
-                    <label for="feedback">{{ __('article_feedback') }}</label>
-                    <textarea id="feedback" name="feedback" class="form-control" rows="1"></textarea>
-                </div>
+        <form action="#" style="display:none;" onsubmit="helpcenter.sendFeedback({{ article.id }}); return false;">
+            <small class="text-success">{{ __('article_vote_sent') }}</small>
 
-                <button type="submit" class="btn btn-primary btn-sm">{{ __('send_article_feedback') }}</button>
-            </form>
-
-            <div class="main" style="display:block;">
-                <span class="title">{{ __('rate_article') }}</span>
-
-                <button class="btn btn-sm btn-outline-primary like" onclick="helpcenter.sendLike({{ article.id }})"><span class="fa fa-check"></span> {{ __('article_helpful') }}</button>
-                <button class="btn btn-sm btn-outline-primary dislike" onclick="helpcenter.sendDislike({{ article.id }})"><span class="fa fa-times"></span> {{ __('article_not_helpful') }}</button>
+            <div class="form-group">
+                <label for="feedback">{{ __('article_feedback') }}</label>
+                <textarea id="feedback" name="feedback" class="form-control" rows="1"></textarea>
             </div>
+
+            <button type="submit" class="btn btn-primary btn-sm">{{ __('send_article_feedback') }}</button>
+        </form>
+
+        <div class="main" style="display:block;">
+            <span class="title">{{ __('rate_article') }}</span>
+
+            <button class="btn btn-emoji like" onclick="helpcenter.sendLike({{ article.id }})">👍</button>
+            <button class="btn btn-emoji dislike" onclick="helpcenter.sendDislike({{ article.id }})">👎</button>
         </div>
     </div>
 </section>

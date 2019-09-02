@@ -7804,11 +7804,31 @@ a.text-dark:hover, a.text-dark:focus {
   .article-single .card-body > *:last-child {
     margin-bottom: 0 !important; }
 
+.article-single .rate-article {
+  padding: 2rem;
+  margin: 0 1rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #f8f9fa;
+  text-align: center; }
+  .article-single .rate-article form {
+    text-align: left; }
+  .article-single .rate-article .title {
+    color: #868e96;
+    display: block; }
+  .article-single .rate-article .btn-emoji {
+    transition: transform .2s ease-in-out;
+    transform: scale(2);
+    margin: 1rem; }
+    .article-single .rate-article .btn-emoji:hover {
+      transform: scale(2.5); }
+
 @media (max-width: 768px) {
   .article-single {
     border: 0; }
     .article-single .card-body {
-      padding: 0; } }
+      padding: 0; }
+    .article-single .rate-article {
+      margin: 1rem 0 0; } }
 
 .form-group label small {
   color: #868e96; }
@@ -7924,3 +7944,10 @@ code {
   font-size: .85em;
   background-color: #f8f9fa;
   border-radius: 0.25rem; }
+
+.btn.btn-emoji {
+  padding: 0;
+  border: 0;
+  line-height: inherit;
+  vertical-align: inherit;
+  transform: scale(1.2); }
