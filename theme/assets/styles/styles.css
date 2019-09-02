@@ -7817,10 +7817,10 @@ a.text-dark:hover, a.text-dark:focus {
     display: block; }
   .article-single .rate-article .btn-emoji {
     transition: transform .2s ease-in-out;
-    transform: scale(2);
+    transform: scale(1.8);
     margin: 1rem; }
     .article-single .rate-article .btn-emoji:hover {
-      transform: scale(2.5); }
+      transform: scale(2.3); }
 
 @media (max-width: 768px) {
   .article-single {

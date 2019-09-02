@@ -29,11 +29,11 @@
 
         .btn-emoji {
             transition: transform .2s ease-in-out;
-            transform: scale(2);
+            transform: scale(1.8);
             margin: $spacer;
 
             &:hover {
-                transform: scale(2.5);
+                transform: scale(2.3);
             }
         }
     }
