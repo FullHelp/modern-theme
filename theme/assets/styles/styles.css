@@ -7803,6 +7803,13 @@ a.text-dark:hover, a.text-dark:focus {
     color: #868e96; }
   .article-single .card-body > *:last-child {
     margin-bottom: 0 !important; }
+  .article-single .card-body img {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto; }
 
 .article-single .rate-article {
   padding: 2rem;
