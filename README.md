@@ -1,4 +1,4 @@
-# Read me
+# Knowledge base theme
 
 This theme is included and enabled by default on [Full Help's help desk and knowledgebase software](https://www.fullhelp.com/en?ref=modern-theme&source=github).
 
