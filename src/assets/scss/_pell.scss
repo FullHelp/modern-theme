@@ -1,0 +1,14 @@
+.pell {
+    border-color: $input-border-color !important;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    .pell-actionbar {
+        border-color: $input-border-color !important;
+        
+        .pell-button {
+            font-size: .91rem;
+        }
+    }
+
+}

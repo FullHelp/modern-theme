@@ -9,7 +9,7 @@ This theme is included and enabled by default on [Full Help's help desk and know
 - Multi-language support
 - Article feedbacks
 - Code sample highlights
-- Contact form
+- Contact form with a [lightweight WYSIWYG](https://github.com/jaredreich/pell) message editor
 - Search page
 - Callouts: info, warning, danger, success
 - Fully responsive

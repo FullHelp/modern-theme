@@ -7959,3 +7959,12 @@ code {
   line-height: inherit;
   vertical-align: inherit;
   transform: scale(1.2); }
+
+.pell {
+  border-color: #ced4da !important;
+  border-radius: 0.25rem;
+  overflow: hidden; }
+  .pell .pell-actionbar {
+    border-color: #ced4da !important; }
+    .pell .pell-actionbar .pell-button {
+      font-size: .91rem; }

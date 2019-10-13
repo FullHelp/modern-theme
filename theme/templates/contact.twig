@@ -4,6 +4,10 @@
 
 {% block title %}{{ __('contact_us') }}{% endblock %}
 
+{% block css %}
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/pell/dist/pell.min.css">
+{% endblock %}
+
 {% block content %}
 <section class="jumbotron bg-primary">
     <div class="container">
@@ -67,7 +71,10 @@
 
             <div class="form-group">
                 <label for="message">{{ __('message') }}</label>
-                <textarea name="message" id="message" class="form-control{{ errors.has('message') ? ' is-invalid' : '' }}">{{ old('message') }}</textarea>
+                
+                <div id="message-wysiwyg" class="pell"></div>
+
+                <textarea name="message" id="message" class="form-control{{ errors.has('message') ? ' is-invalid' : '' }} d-none">{{ old('message') }}</textarea>
 
                 {% if errors.has('message') %}
                     <div class="invalid-feedback">
@@ -97,4 +104,34 @@
         </form>
     </div>
 </section>
+{% endblock %}
+
+{% block js %}
+<script src="https://unpkg.com/pell"></script>
+<script>
+    (function () {
+        var textarea = document.getElementById('message');
+        var editor = pell.init({
+            element: document.getElementById('message-wysiwyg'),
+            onChange: function (html) {
+                textarea.value = html
+            },
+            actions: [
+                'bold',
+                'italic',
+                'underline',
+                'strikethrough',
+                'paragraph',
+                'quote',
+                'olist',
+                'ulist',
+                'code',
+                'link',
+            ]
+            
+        });
+
+        editor.content.innerHTML = textarea.value
+    })()
+</script>
 {% endblock %}
