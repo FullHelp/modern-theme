@@ -49,7 +49,7 @@
 
             <div class="form-group">
                 <label for="subject">{{ __('subject') }}</label>
-                <input type="string" name="subject" id="subject" class="form-control{{ errors.has('subject') ? ' is-invalid' : '' }}" value="{{ old('subject') }}">
+                <input type="text" name="subject" id="subject" class="form-control{{ errors.has('subject') ? ' is-invalid' : '' }}" value="{{ old('subject') }}">
 
                 {% if errors.has('subject') %}
                     <div class="invalid-feedback">
