@@ -1,19 +1,19 @@
-var gulp = require('gulp');
 var sass = require('gulp-sass');
+const { src, dest, watch, series } = require('gulp');
 
-gulp.task('scss', function () {
-  return gulp.src('./src/assets/scss/styles.scss')
+function scss () {
+  return src('./src/assets/scss/styles.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./theme/assets/styles'));
-});
+    .pipe(dest('./theme/assets/styles'));
+}
 
-gulp.task('scripts', function () {
-  return gulp.src('./src/assets/scripts/site.js').pipe(gulp.dest('./theme/assets/scripts'));
-})
+function scripts () {
+  return src('./src/assets/scripts/site.js').pipe(dest('./theme/assets/scripts'));
+}
 
-gulp.task('watch', function () {
-  gulp.watch('./src/assets/scss/*.scss', ['scss']);
-  gulp.watch('./src/assets/scripts/*.js', ['scripts'])
-});
+exports.default = series(scss, scripts);
 
-gulp.task('default', [ 'scss', 'scripts' ]);
+exports.watch = function () {
+  watch('./src/assets/scss/*.scss', scss);
+  watch('./src/assets/scripts/*.js', scripts);
+} 
