@@ -1,5 +1,8 @@
 {
-    "powered_by": "Provisto por <a href=\"https://www.fullhelp.com\" target=\"_blank\">FullHelp.com</a>.",
+    "powered_by": "Provisto por <a href=\":url\" target=\"_blank\">:app</a>.",
+
+    "page_not_found": "Página no encontrada",
+    "page_not_found_description": "La página que estás buscando no pudo ser encontrada. Haz <a href=\":home_url\">clic aquí</a> para ir a la página principal.",
 
     "help_center": "Centro de Ayuda",
     "how_can_we_help": "¿Cómo podemos ayudarte?",
@@ -25,7 +28,7 @@
     "get_in_touch": "Escríbenos",
     "contact_heading": "¿Quieres hablar con alguien?",
     "contact_paragraph": "Siempre puedes ponerte en contacto si no encuentras lo que estás buscando en nuestro centro de ayuda. ¡Te responderemos tan pronto sea posible!",
-    
+
     "collections": "Colecciones",
 
     "category_empty": "Esta categoría no tiene artículos en este momento.",

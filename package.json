@@ -6,11 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch",
+    "sync:watch": "themekit watch theme",
     "gulp": "gulp"
   },
   "author": "Gerardo J. Báez",
   "license": "MIT",
   "devDependencies": {
+    "@fullhelp/themekit": "^0.2.0",
     "bootstrap": "^4.1.3",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",

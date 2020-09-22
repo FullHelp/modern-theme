@@ -1,5 +1,8 @@
 {
-    "powered_by": "Powered by <a href=\"https://www.fullhelp.com\" target=\"_blank\">FullHelp.com</a>.",
+    "powered_by": "Powered by <a href=\":url\" target=\"_blank\">:app</a>.",
+
+    "page_not_found": "Not Found",
+    "page_not_found_description": "The page you were looking for was not found. Please <a href=\":home_url\">click here</a> if you would like to go to the main page.",
 
     "help_center": "Help Center",
     "how_can_we_help": "How can we help?",

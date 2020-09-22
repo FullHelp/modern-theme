@@ -1,0 +1,12 @@
+{% extends "site::base.twig" %}
+
+{% block title %}{{ __('page_not_found') }}{% endblock %}
+
+{% block content %}
+<div class="container py-5 my-5">
+  <h2>{{ __('page_not_found') }}</h2>
+  <p class="lead">{{ __('page_not_found_description', {
+    home_url: url('/')
+  })|raw }}</p>
+</div>
+{% endblock %}
