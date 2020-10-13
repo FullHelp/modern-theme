@@ -19,7 +19,9 @@
     <div class="container">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url() }}">{{ __('collections') }}</a></li>
-            <li class="breadcrumb-item"><a href="{{ url("collection/#{article.collection_id}/#{article.collection.slug}") }}">{{ article.collection.name }}</a></li>
+            {% if article.collection %}
+                <li class="breadcrumb-item"><a href="{{ url("collection/#{article.collection_id}/#{article.collection.slug}") }}">{{ article.collection.name }}</a></li>
+            {% endif %}
             <li class="breadcrumb-item active">{{ article.title }}</li>
         </ol>
     </div>
