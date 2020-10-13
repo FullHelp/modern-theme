@@ -67,7 +67,10 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="copyright">© {{ site.name }} {{ year }}. {{ __('powered_by') | raw }}</p>
+            <p class="copyright">© {{ site.name }} {{ year }}. {{ __('powered_by', {
+                app: platformName,
+                url: platformUrl
+            }) | raw }}</p>
         </div>
     </footer>
 
