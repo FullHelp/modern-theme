@@ -43,7 +43,7 @@
     function sendLike (articleId) {
         startLoadingState();
 
-        $.post(`/${KnowledgeBaseApp.site.locale}/article/${articleId}/rating`, {
+        $.post(`${KnowledgeBaseApp.site.url}/${KnowledgeBaseApp.site.locale}/article/${articleId}/rating`, {
             _token: KnowledgeBaseApp.site.csrfToken,
             type: 'like'
         }, likeSent).always(resetLoadingState);
@@ -57,7 +57,7 @@
     function sendDislike (articleId) {
         startLoadingState();
 
-        $.post(`/${KnowledgeBaseApp.site.locale}/article/${articleId}/rating`, {
+        $.post(`${KnowledgeBaseApp.site.url}/${KnowledgeBaseApp.site.locale}/article/${articleId}/rating`, {
             _token: KnowledgeBaseApp.site.csrfToken,
             type: 'dislike'
         }, showArticleFeedbackForm).always(resetLoadingState);
@@ -71,7 +71,7 @@
     function sendFeedback (articleId) {
         startLoadingState();
 
-        $.post(`/${KnowledgeBaseApp.site.locale}/article/${articleId}/feedback`, {
+        $.post(`${KnowledgeBaseApp.site.url}/${KnowledgeBaseApp.site.locale}/article/${articleId}/feedback`, {
             _token: KnowledgeBaseApp.site.csrfToken,
             feedback: document.getElementById('feedback').value
         }, feedbackSent).always(resetLoadingState);
@@ -99,7 +99,7 @@
     function highlight () {
         if (window.Mark) {
             new Mark(document.querySelector(".highlight-context")).mark(
-                document.getElementById('query').value,  {
+                document.getElementById('query').value, {
                     separateWordSearch: false
                 }
             );
